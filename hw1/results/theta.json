@@ -1,0 +1,93 @@
+{
+  "latency": {
+    "launch_seconds": 2.3641301092768976e-05,
+    "compute_flops_per_second": 5937796591381.401,
+    "bandwidth_bytes_per_second": 86361449046.94862
+  },
+  "energy": {
+    "fixed_joules": 0.016645791351289112,
+    "joules_per_flop": 0.0,
+    "joules_per_byte": 1.1739295960840626e-09
+  },
+  "metrics": {
+    "latency": {
+      "train": {
+        "count": 71,
+        "mae": 0.002576863916082869,
+        "rmse": 0.006070274724945571,
+        "mape_percent": 15.481832253420652,
+        "median_ape_percent": 8.217770760317892,
+        "max_ape_percent": 64.5158706381299
+      },
+      "validation": {
+        "count": 72,
+        "mae": 0.0028562307440445443,
+        "rmse": 0.006113826262849002,
+        "mape_percent": 11.10672534405042,
+        "median_ape_percent": 6.68059039448812,
+        "max_ape_percent": 61.6361253151441
+      }
+    },
+    "energy": {
+      "train": {
+        "count": 71,
+        "mae": 0.34529575878360685,
+        "rmse": 1.0105303096641918,
+        "mape_percent": 9.399336847586305,
+        "median_ape_percent": 8.014659973207628,
+        "max_ape_percent": 30.787521424004055
+      },
+      "validation": {
+        "count": 72,
+        "mae": 0.32615171788854586,
+        "rmse": 0.8337102546424585,
+        "mape_percent": 8.09205705114014,
+        "median_ape_percent": 6.132615219640199,
+        "max_ape_percent": 23.708399951833393
+      }
+    }
+  },
+  "diagnostics": {
+    "latency": {
+      "rank": 3,
+      "columns": 3,
+      "column_normalized_condition_number": 51.081666274005165,
+      "relative_rmse": 0.22218887734037984,
+      "successful_starts": 9,
+      "optimizer_message": "`xtol` termination condition is satisfied.",
+      "parameters_at_bounds": []
+    },
+    "energy": {
+      "rank": 3,
+      "columns": 3,
+      "column_normalized_condition_number": 2961.2102628139683,
+      "relative_rmse": 0.11940024089910173,
+      "flops_bytes_correlation": 0.9999999998444894,
+      "zero_parameters": [
+        "joules_per_flop"
+      ]
+    }
+  },
+  "warnings": [
+    "energy: coefficients are poorly identified; inspect diagnostics",
+    "Energy FLOPs and bytes are strongly correlated. Coefficients are effective fit parameters, not independently measured hardware energy costs.",
+    "Energy NNLS placed some coefficients at zero; see diagnostics"
+  ],
+  "schema_version": 1,
+  "objective": "mean squared relative error on training rows only",
+  "formulas": {
+    "latency": "17*tau + sum_i max(F_i/P, D_i/W)",
+    "energy": "E0 + eF*F + eD*D",
+    "flops": "B*(17714*S^2+313700)",
+    "bytes_moved": "4161296+B*(380*S^2+8592)",
+    "memory_baseline": "13729792+68*B*S^2"
+  },
+  "counts": {
+    "rows": 144,
+    "oom": 1,
+    "missing_energy_on_success": 0
+  },
+  "sources": {
+    "results/measurements.csv": "5c74ff45abcac9586acd2498e0d6c35c0604929cd18f6e095d4a934d4a416737"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "memory": {
+    "train": {
+      "count": 71,
+      "mae": 140333935.7746479,
+      "rmse": 401454200.2830225,
+      "mape_percent": 18.59530646381054,
+      "median_ape_percent": 22.7556815821756,
+      "max_ape_percent": 51.78342460475369
+    },
+    "validation": {
+      "count": 72,
+      "mae": 217274688.0,
+      "rmse": 465592779.6941359,
+      "mape_percent": 26.887959421093054,
+      "median_ape_percent": 29.505077404980153,
+      "max_ape_percent": 50.517367895982254
+    }
+  },
+  "oom": [
+    {
+      "S": 1024,
+      "B": 256,
+      "baseline_bytes": 18267340800.0,
+      "baseline_GiB": 17.012786865234375
+    }
+  ]
+}

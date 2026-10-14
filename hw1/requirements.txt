@@ -1,0 +1,5 @@
+torch==2.14.1
+numpy==2.5.4
+nvidia-ml-py==13.615.71
+scipy==1.18.1
+matplotlib==3.11.2
